@@ -1,13 +1,13 @@
-# kubernetes-experience
+# kubernetes-experience\
 
 1.) Create a PersistentVolume mysql-pv, its capacity should be 250Mi, set other parameters as per your preference.
-2.) Create a PersistentVolumeClaim to request this PersistentVolume storage. Name it as mysql-pv-claim and request a 250Mi of storage. Set other parameters
- as per your preference.
+
+2.) Create a PersistentVolumeClaim to request this PersistentVolume storage. Name it as mysql-pv-claim and request a 250Mi of storage. Set other parameter as per your preference.
 3.) Create a deployment named mysql-deployment, use any mysql image as per your preference. Mount the PersistentVolume at mount path /var/lib/mysql.
+
 4.) Create a NodePort type service named mysql and set nodePort to 30007.
-5.) Create a secret named mysql-root-pass having a key pair value, where key is password and its value is YUIidhb667, 
-create another secret named mysql-user-pass having some key pair values, where frist key is username and its value is kodekloud_top, 
-second key is password and value is B4zNgHA7Ya, 
+
+5.) Create a secret named mysql-root-pass having a key pair value, where key is password and its value is YUIidhb667, create another secret named mysql-user-pass having some key pair values, where frist key is username and its value is kodekloud_top, second key is password and value is B4zNgHA7Ya, 
 create one more secret named mysql-db-url, key name is database and value is kodekloud_db8
 
 6.) Define some Environment variables within the container:
@@ -17,6 +17,7 @@ c) name: MYSQL_USER, should pick value from secretKeyRef name: mysql-user-pass k
 d) name: MYSQL_PASSWORD, should pick value from secretKeyRef name: mysql-user-pass and key: password
 
 
+#Below are the task to implement the above ask, code will change based on secret values and other paramater.
 
 #Create Secrets
 ```sh
